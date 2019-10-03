@@ -129,3 +129,19 @@ useEffect(() => {
 ```
 
 ---
+
+## useMemo
+
+To avoid the re-rendering of the component always that we need to calculate or do something that required processing, we use `useMemo()`.
+
+- The method `useMemo()` returns a value. So it is binded at a constant.
+  1. - The first parameter, is the function that will be executed
+  2. - The second parameter, is the array, variable that will be monitored.
+
+```js
+const techListSize = useMemo(() => {
+  return techList.length;
+}, [techList]);
+```
+
+---

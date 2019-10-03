@@ -13,7 +13,7 @@ Hooks is a new API from React that allow us to use state and other features with
   - `yarn add eslint-plugin-react-hooks -D`
 - Then initialize Eslint
   - `yarn eslint --init`
-- After installed everything, configure the .eslintrc.js/.prettierrc/.editorconfig => (Files)[https://gist.github.com/richardyamamoto/48629ca8b08df04521d547aacfbdd63c]
+- After installed everything, configure the .eslintrc.js/.prettierrc/.editorconfig => [Files](https://gist.github.com/richardyamamoto/48629ca8b08df04521d547aacfbdd63c)
 
 ---
 

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
-  const [techList, setTechList] = useState(['ReactJS', 'React Native']);
+  const [techList, setTechList] = useState([]);
   const [newTech, setNewTech] = useState('');
 
   const handleChange = event => {
@@ -12,6 +12,19 @@ function App() {
     setTechList([...techList, newTech]);
     setNewTech('');
   };
+
+  useEffect(() => {
+    const storageTechList = localStorage.getItem('techList');
+
+    if (storageTechList) {
+      setTechList(JSON.parse(storageTechList));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('techList', JSON.stringify(techList));
+  }, [techList]);
+
   return (
     <>
       <ul>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useCallback } from 'react';
 
 function App() {
   const [techList, setTechList] = useState([]);
@@ -8,10 +8,10 @@ function App() {
     setNewTech(event.target.value);
   };
 
-  const handleAdd = () => {
+  const handleAdd = useCallback(() => {
     setTechList([...techList, newTech]);
     setNewTech('');
-  };
+  }, [techList, newTech]);
 
   useEffect(() => {
     const storageTechList = localStorage.getItem('techList');

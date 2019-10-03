@@ -145,3 +145,18 @@ const techListSize = useMemo(() => {
 ```
 
 ---
+
+## useCallback
+
+All the functions created in JavaScript is realocated in memory always that the component renders. To avoid the waste of processing we use the `useCallback()`
+
+- The method `useCallback()` need to be binded at a constant.
+  1. - The first parameter, is the function that will be executed
+  2. - The second parameter, is the array, variable that will be monitored.
+
+```js
+const handleAdd = useCallback(() => {
+  setTechList([...techList, newTech]);
+  setNewTech('');
+}, [techList, newTech]);
+```
